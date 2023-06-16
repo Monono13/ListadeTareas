@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListadeTareas.Main">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Agregar Tarea" Clicked="Agregar_Tarea"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Lista de Tareas" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" TextColor="Black" Margin="10"/>
+            <ListView x:Name="lista_tareas" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem x:Name="Delete" Text="Eliminar" IsDestructive="True" Clicked="Delete_Tarea" CommandParameter="{Binding .}">
+
+                                </MenuItem>
+                                <MenuItem x:Name="Update" Text="Editar" IsDestructive="True" Clicked="Update_Tarea" CommandParameter="{Binding .}">
+                                    
+                                </MenuItem>
+                            </ViewCell.ContextActions>
+                            <StackLayout>
+                                <Label Text="{Binding Tarea}" FontSize="Medium" TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

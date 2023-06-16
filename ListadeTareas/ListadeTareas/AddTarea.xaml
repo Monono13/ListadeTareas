@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListadeTareas.AddTarea"
+             Title="Agregar Tarea">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Guardad" Clicked="Clicked_Guardar" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Escriba La Tarea" FontSize="Large" TextColor="Black"/>
+            <Editor x:Name="tarea" HeightRequest="200" FontSize="Medium" TextColor="Black"></Editor>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
